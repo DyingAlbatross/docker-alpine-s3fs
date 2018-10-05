@@ -1,11 +1,11 @@
-FROM alpine:3.3
+FROM node:8.12.0-alpine
 
 # the following ENV need to be present
 ENV IAM_ROLE=none
 ENV MOUNT_POINT=/var/s3
 VOLUME /var/s3
 
-ARG S3FS_VERSION=v1.79
+ARG S3FS_VERSION=v1.84
 
 RUN apk --update add fuse alpine-sdk automake autoconf libxml2-dev fuse-dev curl-dev git bash;
 RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git; \
